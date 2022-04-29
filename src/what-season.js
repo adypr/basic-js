@@ -12,10 +12,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
+  
   try {
+    if ((date instanceof Date) === false) throw new Error();
     
     const month = date.getMonth();
-   console.log('month - ', month);
+   
     if (month <= 1 || month === 11) return 'winter';
     if (month <= 4) return 'spring';
     if (month <= 7) return 'summer';
@@ -64,6 +66,11 @@ const deeperFakeDate = {
   [Symbol.toStringTag]: 'Date'
 };
 
+const fakeDate = {
+  toString() {
+      return Date.prototype.toString.call(new Date());
+  },
+  [Symbol.toStringTag]: 'Date'
+};
 
-
-console.log(getSeason(deeperFakeDate));
+console.log(getSeason(fakeDate));
