@@ -28,7 +28,7 @@ describe('Vigenere cipher', () => {
       expect(new VigenereCipheringMachine(false)).to.respondTo('decrypt');
     });
   });
-  //Specific requirements
+  //Specific requirements 
   describe('base requirements', () => {
     const directMachine = new VigenereCipheringMachine();
     const reverseMachine = new VigenereCipheringMachine(false);

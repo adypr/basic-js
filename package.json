@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "node src/extended-repeater.js"
+    "start": "node src/vigenere-cipher.js"
   },
   "repository": {
     "type": "git",
